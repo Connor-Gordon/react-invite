@@ -1,26 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { makeACall } from '../actions/example'
+
+import Home from './Home'
+import Contacts from './Contacts'
+import Going from './Going'
+import { getNotGoing } from '../actions/notgoing'
 
 class Home extends Component {
-  componentDidMount() {
-    makeACall()
-  }
   
   render() {
     return (
-      <div>
-        <h1>Home</h1>
-        <p>{this.props.example}</p>
-      </div>
+        <div className="mainContainer">
+            <Contacts />
+            <Going />
+            <Notgoing />
+    </div>
     )
   }
 }
 
-function mapStateToProps(appState) {
-  return {
-    example: appState.exampleReducer.example
-  }
-}
 
-export default connect(mapStateToProps)(Home)
+export default Home;

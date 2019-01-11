@@ -1,12 +1,12 @@
 const initialState = {
-  example: ''
+  notgoing: ''
 }
 
 export default function (state = initialState, action) {
   switch (action.type) {
     // add actions here
-    case 'EXAMPLE':
-      return {...state, example: action.example}
+    case 'GET_NOTGOING':
+      return {...state, notgoing: action.notgoing}
     default:
       return state
   }
